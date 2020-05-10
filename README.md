@@ -5,22 +5,33 @@
 
 [More screenshots](https://imgur.com/a/FDVRIyw)
 
-### Deploy with Docker compose
+### Install:
 
-#### Prerequisites:
+sui runs in any http server like apache, nginx, lighttpd, httpd
+
+Download/clone repo and copy over to your root or virtual host:
+ - `assets/` folder
+ - `index.html`
+ - `apps.json`, `links.json`, `providers.json`
+
+navigating to root folder will open the page
+
+#### Docker / Podman
+
+##### Prerequisites:
  - Docker: [Linux](https://docs.docker.com/install/linux/docker-ce/debian/), [Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac), [Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
- - [Docker-compose](https://docs.docker.com/compose/install/) 
+ - Also tested with [Podman](https://podman.io/) (replace docker with podman in commands below)
 
-#### Install:
+##### Quick install steps:  
 
- - `git clone` this repository
- - Build and bring up with `docker-compose up -d`
- - The page should be available at  `http://localhost:4000` 
+ - `git clone` or download this repository
+ - Build the image using `docker build -f Dockerfile -t sui`
+ - Run the container with `docker run -d -p 4000:80 localhost/sui sui`
+ - The page should be available at  `http://localhost:4000`
 
-To run at a different port open edit docker-compose.yml:
-
-    ports:
-          - 4000:80
+Please note:
+ - You can change host's port (`4000`) to any valid port you may want
+ - You can use `--user` switch in your `docker run` command to run the process as a different user
 
 ### Customization
 
@@ -39,7 +50,6 @@ Add your apps by editing apps.json:
 
 Please note:
 
- - No `http://` in the URL
  - No `,` at the end of the last app's line
  - Find the names  of icons to use at [Material Design Icons](https://materialdesignicons.com/)
 
@@ -82,7 +92,6 @@ Add names for the categories you wish to define and add the bookmarks for each c
 
 Please note:
 
- - No `http://` in the URL
  - No `,` at the end of the last bookmark in a category and at the end of the last category
 
 
