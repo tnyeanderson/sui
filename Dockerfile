@@ -1,7 +1,5 @@
 FROM busybox
 
-LABEL maintainer="Jeroen Pardon"
-
 WORKDIR /opt/html
 
 COPY . /opt/html
