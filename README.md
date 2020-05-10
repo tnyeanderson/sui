@@ -26,7 +26,7 @@ navigating to root folder will open the page
 
  - `git clone` or download this repository
  - Build the image using `docker build -f Dockerfile -t sui`
- - Run the container with `docker run -d -p 4000:80 localhost/sui sui`
+ - Run the container with `docker run -d -p 4000:80  --name sui localhost/sui`
  - The page should be available at  `http://localhost:4000`
 
 Please note:
