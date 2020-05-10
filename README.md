@@ -103,3 +103,9 @@ These can be added or customized in the themer.js file. When changing the name o
 ```
 
 I might add a simpler way to edit themes at some point, but adding the current ones should be pretty straight forward.
+
+
+### Known Issues
+
+* Search function key `/` opens QuickSearch instead while using Firefox  
+You can probably change the QuickSearch key using an extension, otherwise the sui search key can be set by editing file `assets/js/script.js` on [THIS LINE](https://github.com/magikmw/sui/blob/a502822e3f42ed15e37b8ef9546304c5b6bd41d4/assets/js/search.js#L56) (if using docker make sure you edit it before building an image or build again).
