@@ -9,12 +9,7 @@
 
 sui runs in any http server like apache, nginx, lighttpd, httpd
 
-Download/clone repo and copy over to your root or virtual host:
- - `assets/` folder
- - `index.html`
- - `apps.json`, `links.json`, `providers.json`
-
-navigating to root folder will open the page
+Download/clone repo and copy the contents of `app` directory to where your http server will expect them. That's it.
 
 #### Docker / Podman
 

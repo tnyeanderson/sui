@@ -2,7 +2,7 @@ FROM busybox
 
 WORKDIR /opt/html
 
-COPY . /opt/html
+ADD app /opt/html/
 
 EXPOSE 80
 
