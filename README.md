@@ -2,6 +2,7 @@
 *a startpage for your server and / or new tab page*
 
 ![screenshot](https://i.imgur.com/J4d7Q3D.png)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmagikmw%2Fsui.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmagikmw%2Fsui?ref=badge_shield)
 
 [More screenshots](https://imgur.com/a/FDVRIyw)
 
@@ -12,6 +13,7 @@ sui runs in any http server like apache, nginx, lighttpd, httpd
 Download/clone repo and copy the contents of `app` directory to where your http server will expect them. That's it.
 
 #### Docker / Podman
+
 
 ##### Prerequisites:
  - Docker: [Linux](https://docs.docker.com/install/linux/docker-ce/debian/), [Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac), [Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
@@ -27,6 +29,22 @@ Download/clone repo and copy the contents of `app` directory to where your http 
 Please note:
  - You can change host's port (`4000`) to any valid port you may want
  - You can use `--user` switch in your `docker run` command to run the process as a different user
+ 
+##### Docker Compose
+
+Clone the repository, then run the `docker-compose` command:
+
+```
+git clone https://github.com/fossabot/sui.git
+cd sui
+docker-compose up -d --build
+```
+
+To retain configuration during updates and ensure that changes can be made without requiring a rebuild of the container, complete the following steps:
+
+ - Create a `config` directory in the root project folder
+ - Copy all the configuration files from `app/config` and modify as needed
+ - Uncomment the volume mount in `docker-compose.yml`. This mounts the created `config` directory to the configuration directory on the container
 
 ### Customization
 
@@ -91,16 +109,15 @@ Please note:
 
 
 #### Color themes
-These can be added or customized in the themer.js file. When changing the name of a theme or adding one, make sure to edit this section in index.html accordingly:
 
-```
-    <section  class="themes">
-```
-
-I might add a simpler way to edit themes at some point, but adding the current ones should be pretty straight forward.
+These can be added or customized in the `themes.js` configuration file.
 
 
 ### Known Issues
 
 * Search function key `/` opens QuickSearch instead while using Firefox  
 You can probably change the QuickSearch key using an extension, otherwise the sui search key can be set by editing file `assets/js/script.js` on [THIS LINE](https://github.com/magikmw/sui/blob/a502822e3f42ed15e37b8ef9546304c5b6bd41d4/assets/js/search.js#L56) (if using docker make sure you edit it before building an image or build again).
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmagikmw%2Fsui.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmagikmw%2Fsui?ref=badge_large)
