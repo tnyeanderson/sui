@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
           .then(function (data) {
               handleLinks(data);
               localStorage.setItem("links", JSON.stringify(data));
+              Config.data.links = data.links;
           });
   } else {
       handleLinks(bookmarks);
@@ -33,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
       var mytemplate = Handlebars.compile(mysource);
       var myresult = mytemplate(data)
       document.getElementById("apps").innerHTML = myresult;
+      Config.data.apps = data.apps;
+      uptimeDigest(data.apps);
     });
 });
 
@@ -45,5 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
       var mytemplate = Handlebars.compile(mysource);
       var myresult = mytemplate(data)
       document.getElementById("providers").innerHTML = myresult;
+      Config.data.providers = data.providers;
     });
 });

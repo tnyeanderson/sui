@@ -9,8 +9,17 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/New_York
-    #volumes:
-    #  - ./config:/opt/html/config
+    volumes:
+      - ./config:/opt/html/config
     ports:
       - 4000:80
+    restart: unless-stopped
+
+  uptime-test:
+    container_name: uptime-test
+    image: php:apache
+    volumes:
+      - ./proxy.php:/var/www/html/index.php
+    ports:
+      - 8080:80
     restart: unless-stopped
