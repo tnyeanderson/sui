@@ -1,11 +1,13 @@
 function uptimeDigest (apps) {
+    if (Config.uptime_indicator.enabled === false) {
+        return;
+    }
     for (var i=0, len=apps.length; i<len; i++) {
         checkSiteStatus(apps[i]);
     }
 }
 
 const checkSiteStatus = async (app) => {
-    console.log("Digest", app);
     fetch("http://localhost:8080/?url=" + app.url)
         .then(response => response.json())
         .then(function (result) {
@@ -31,4 +33,4 @@ function updateUptimeStatus (name, is_up) {
 
 let uptimeDigestInterval = setInterval(function () {
     uptimeDigest(Config.data.apps);
-}, 15 * 1000);
+}, Config.uptime_indicator.interval_secs * 1000);

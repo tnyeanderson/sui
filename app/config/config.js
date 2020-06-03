@@ -1,7 +1,7 @@
 var Config = {
     uptime_indicator: {
         enabled: false,
-        interval_secs: 10
+        interval_secs: 15
     },
     data: {}
 }

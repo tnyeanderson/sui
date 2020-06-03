@@ -234,7 +234,13 @@ table a{
 .app-uptime {
     font-size: 0.5em;
     color: var(--color-text-pri);
-    position: absolute;
+    vertical-align: top;
+    margin-right: 1em;
+    display: inline-block;
+}
+
+.app-uptime.disabled {
+    display: none;
 }
 
 .app-uptime.status-up {
@@ -249,7 +255,6 @@ table a{
 	font-size: 1em;
 	font-weight: 500;
 	text-transform: uppercase;
-    margin-left: 1em;
 }
 
 .apps_text span.app-address{
