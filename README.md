@@ -2,7 +2,6 @@
 *a startpage for your server and / or new tab page*
 
 ![screenshot](https://i.imgur.com/J4d7Q3D.png)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmagikmw%2Fsui.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmagikmw%2Fsui?ref=badge_shield)
 
 [More screenshots](https://imgur.com/a/FDVRIyw)
 
